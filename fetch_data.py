@@ -34,7 +34,7 @@ for row in csvreader:
     r =requests.get(dl)
     with open('./temp/temp.mp3', 'wb') as f:
         f.write(r.content)
-    sound = AudioSegment.from_mp3(r'D:\Github\CUI-CUI\temp\temp.mp3')
+    sound = AudioSegment.from_mp3('./temp/temp.mp3')
     sound.set_channels(1)
     segments = len(sound)//7000
     print('{} segments found'.format(segments))
